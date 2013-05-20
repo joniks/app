@@ -18,21 +18,28 @@ $mainConfig = array(
     'preload' => array(
         'log',
         'langHandler',
-        'bootstrap',
+        //'bootstrap'
     ),
     'aliases' => array(
         // composer
         'root' => $applicationDirectory.'/..',
         'webroot' => $applicationDirectory.'/../www',
-        'vendor' => $applicationDirectory.'/../vendor',
-        'bootstrap' => 'vendor.crisu83.yii-bootstrap',
+        'vendor' => $applicationDirectory.'/../vendor',        
+        // bootstrap (yiistrap)
+        'bootstrap' => 'vendor.2amigos.yiistrap',
         // p3widgets
         'jsonEditorView' => 'vendor.phundament.p3extensions.widgets.jsonEditorView',
         'ckeditor' => 'vendor.phundament.p3extensions.widgets.ckeditor',
         // p3media
         'jquery-file-upload' => 'vendor.phundament.jquery-file-upload',
         'jquery-file-upload-widget' => 'vendor.phundament.p3extensions.widgets.jquery-file-upload',
-
+        // BC compatibility for yii-bootstrap 1.x API
+        'bootstrap.widgets.TbBreadcrumbs' => 'vendor.crisu83.yii-bootstrap.widgets.TbBreadcrumbs',
+        'bootstrap.widgets.TbButton' => 'vendor.crisu83.yii-bootstrap.widgets.TbButton',
+        'bootstrap.widgets.TbButtonGroup' => 'vendor.crisu83.yii-bootstrap.widgets.TbButtonGroup',
+        'bootstrap.widgets.TbDropdown' => 'vendor.crisu83.yii-bootstrap.widgets.TbDropdown',
+        'bootstrap.widgets.TbBaseMenu' => 'vendor.crisu83.yii-bootstrap.widgets.TbBaseMenu',
+        'bootstrap.widgets.TbMenu' => 'vendor.crisu83.yii-bootstrap.widgets.TbMenu',
         // fixing 'hardcoded aliases' from extension (note: you have to use the full path)
         'application.modules.user.views.asset' => 'vendor.mishamx.yii-user.views.asset',
         'application.modules.user.components' => 'vendor.mishamx.yii-user.components',
@@ -48,6 +55,10 @@ $mainConfig = array(
         'application.models.*',
         'application.components.*',
         'zii.widgets.*',
+        'bootstrap.widgets.TbMenu', // TODO: remove on complete yiistrap transisition
+        'bootstrap.widgets.TbBreadcrumbs', // TODO: remove on complete yiistrap transisition
+        'bootstrap.widgets.*',
+        'bootstrap.helpers.*',
         'vendor.phundament.gii-template-collection.components.*', // Relation Widget
         'vendor.phundament.p3widgets.components.*', // P3WidgetContainer
         'vendor.phundament.p3extensions.components.*', // shared classes
@@ -57,7 +68,6 @@ $mainConfig = array(
         'vendor.phundament.p3pages.models.*', // Meta description and keywords (P3Media)
         'vendor.mishamx.yii-user.models.*', // User Model
         'vendor.crisu83.yii-rights.components.*', // RWebUser
-        'vendor.crisu83.yii-bootstrap.widgets.*', // Bootstrap UI
         'vendor.yiiext.fancybox-widget.*', // Fancybox Widget
         'vendor.vitalets.yii-bootstrap-editable.*', // p3media
     ),
@@ -207,22 +217,7 @@ $mainConfig = array(
             'defaultRoles' => array('Authenticated', 'Guest'), // see correspoing business rules, note: superusers always get checkAcess == true
         ),
         'bootstrap' => array(
-            'class' => 'vendor.crisu83.yii-bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
-            'coreCss' => false, // whether to register the Bootstrap core CSS (bootstrap.min.css), defaults to true
-            'responsiveCss' => false, // whether to register the Bootstrap responsive CSS (bootstrap-responsive.min.css), default to false
-            'plugins' => array(
-                // Optionally you can configure the "global" plugins (button, popover, tooltip and transition)
-                // To prevent a plugin from being loaded set it to false as demonstrated below
-                'transition' => false, // disable CSS transitions
-                'tooltip' => array(
-                    'selector' => 'a.tooltip', // bind the plugin tooltip to anchor tags with the 'tooltip' class
-                    'options' => array(
-                        'placement' => 'bottom', // place the tooltips below instead
-                    ),
-                ),
-            // If you need help with configuring the plugins, please refer to Bootstrap's own documentation:
-            // http://twitter.github.com/bootstrap/javascript.html
-            ),
+            'class' => 'bootstrap.components.TbApi', // assuming you extracted bootstrap under extensions
         ),
         'cache' => array(
             'class' => 'CDummyCache',

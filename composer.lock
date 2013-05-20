@@ -3,8 +3,84 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "f35fcb8e20accbe9452b2219d11f24ea",
+    "hash": "2a0b2e253ab57a5e3aa26124edbb4e5e",
     "packages": [
+        {
+            "name": "2amigos/yiistrap",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/2amigos/yiistrap.git",
+                "reference": "c87f8050f8d4b181c440f78eb5e0cf795e5fa9b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/2amigos/yiistrap/zipball/c87f8050f8d4b181c440f78eb5e0cf795e5fa9b3",
+                "reference": "c87f8050f8d4b181c440f78eb5e0cf795e5fa9b3",
+                "shasum": ""
+            },
+            "type": "yii-extension",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Christoffer Niska",
+                    "email": "christoffer.niska@gmail.com",
+                    "homepage": "http://www.cniska.net/"
+                },
+                {
+                    "name": "Antonio Ramirez",
+                    "email": "ramirez.cobos@gmail.com",
+                    "homepage": "http://www.ramirezcobos.com/"
+                }
+            ],
+            "description": "Twitter Bootstrap for the Yii PHP framework. Own maintained version.",
+            "keywords": [
+                "bootstrap",
+                "yii"
+            ],
+            "time": "2013-05-14 17:49:15"
+        },
+        {
+            "name": "2amigos/yiiwheels",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/2amigos/yiiwheels.git",
+                "reference": "02d1d24e4b798793008f16575dd2fdd11d0145c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/2amigos/yiiwheels/zipball/02d1d24e4b798793008f16575dd2fdd11d0145c7",
+                "reference": "02d1d24e4b798793008f16575dd2fdd11d0145c7",
+                "shasum": ""
+            },
+            "require": {
+                "2amigos/yiistrap": "dev-master"
+            },
+            "type": "yii-extension",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Antonio Ramirez",
+                    "email": "ramirez.cobos@gmail.com",
+                    "homepage": "http://www.ramirezcobos.com/"
+                }
+            ],
+            "description": "Extension library for Yiistrap, Yii Twitter's Bootstrap.",
+            "keywords": [
+                "bootstrap"
+            ],
+            "support": {
+                "source": "https://github.com/2amigos/yiiwheels/tree/master",
+                "issues": "https://github.com/2amigos/yiiwheels/issues"
+            },
+            "time": "2013-05-10 21:19:55"
+        },
         {
             "name": "anggiaj/eselect2",
             "version": "dev-master",
@@ -363,16 +439,16 @@
         },
         {
             "name": "phundament/p3pages",
-            "version": "0.11.5",
+            "version": "0.11.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmunk42/p3pages.git",
-                "reference": "0.11.5"
+                "reference": "0.11.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmunk42/p3pages/zipball/0.11.5",
-                "reference": "0.11.5",
+                "url": "https://api.github.com/repos/schmunk42/p3pages/zipball/0.11.6",
+                "reference": "0.11.6",
                 "shasum": ""
             },
             "require": {
@@ -382,7 +458,6 @@
                 "yiisoft/yii": "1.1.*"
             },
             "type": "yii-extension",
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -396,25 +471,29 @@
             "description": "Page Manager",
             "homepage": "https://github.com/schmunk42/p3pages",
             "keywords": [
-                "Sitemap",
                 "page",
+                "sitemap",
                 "structure",
                 "tree"
             ],
-            "time": "2013-05-15 00:31:10"
+            "support": {
+                "source": "https://github.com/schmunk42/p3pages/tree/0.11.6",
+                "issues": "https://github.com/schmunk42/p3pages/issues"
+            },
+            "time": "2013-05-16 17:53:14"
         },
         {
             "name": "phundament/p3widgets",
-            "version": "0.11.3",
+            "version": "0.11.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmunk42/p3widgets.git",
-                "reference": "0.11.3"
+                "reference": "0.11.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmunk42/p3widgets/zipball/0.11.3",
-                "reference": "0.11.3",
+                "url": "https://api.github.com/repos/schmunk42/p3widgets/zipball/0.11.4",
+                "reference": "0.11.4",
                 "shasum": ""
             },
             "require": {
@@ -442,10 +521,10 @@
                 "widget"
             ],
             "support": {
-                "source": "https://github.com/schmunk42/p3widgets/tree/0.11.3",
+                "source": "https://github.com/schmunk42/p3widgets/tree/0.11.4",
                 "issues": "https://github.com/schmunk42/p3widgets/issues"
             },
-            "time": "2013-04-25 22:16:24"
+            "time": "2013-05-16 14:19:43"
         },
         {
             "name": "schmunk42/multi-theme",
@@ -794,21 +873,30 @@
         },
         {
             "name": "twitter/bootstrap",
-            "version": "v2.3.1",
+            "version": "v2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twitter/bootstrap.git",
-                "reference": "eb24718add4dd36fe92fdbdb79e6ff4ce5919300"
+                "reference": "v2.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/twitter/bootstrap/archive/eb24718add4dd36fe92fdbdb79e6ff4ce5919300.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://api.github.com/repos/twitter/bootstrap/zipball/v2.3.2",
+                "reference": "v2.3.2",
+                "shasum": ""
             },
             "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
             "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development.",
-            "homepage": "https://github.com/twitter/bootstrap"
+            "homepage": "http://twitter.github.com/bootstrap/",
+            "keywords": [
+                "bootstrap",
+                "css"
+            ],
+            "time": "2013-05-17 17:26:09"
         }
     ],
     "aliases": [
@@ -820,6 +908,7 @@
         "malyshev/yii-debug-toolbar": 20,
         "mishamx/yii-user": 20,
         "waalzer/app-demo-data": 20,
+        "2amigos/yiiwheels": 20,
         "phundament/lessii": 20,
         "ifdattic/echosen": 20
     },

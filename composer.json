@@ -46,7 +46,8 @@
         "yiiext/migrate-command":"0.7.*",
         "clevertech/yiibooster": "dev-master as 1.0.x-dev",
         "vitalets/x-editable-yii": "1.2.0",
-        "waalzer/app-demo-data": "dev-master"
+        "waalzer/app-demo-data": "dev-master",
+        "sleepwalker/hoauth": "1.2.*"
     },
     "require-dev":{
         "schmunk42/database-command":"0.8.*",

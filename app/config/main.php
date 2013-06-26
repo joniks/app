@@ -42,6 +42,7 @@ $mainConfig = array(
         'echosen.EChosen' => 'vendor.ifdattic.echosen.EChosen',
         'ext.EChosen' => 'vendor.ifdattic.echosen',
         'editable' => 'vendor.vitalets.x-editable-yii',
+        'ext.hoauth.models.UserOAuth' => 'vendor.sleepwalker.hoauth.models.UserOAuth',
     ),
     // autoloading model and component classes
     'import' => array(

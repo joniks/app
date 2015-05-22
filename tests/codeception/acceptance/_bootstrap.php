@@ -1,3 +1,2 @@
 <?php
-// Here you can initialize variables that will for your tests
-$suite = "acceptance";
+new yii\web\Application(require(dirname(__DIR__) . '/config/acceptance.php'));

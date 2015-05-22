@@ -1,107 +1,76 @@
-Phundament
-==========
+Phundament 4
+============
 
-**Version 3.0.24**
+> Please note: This is a `beta` [version](version).
 
+Phundament is a 12factor PHP application template for Yii Framework 2.0.
 
-What is it?
--------------------
-
-Phundament is a solid, highly customizable universal application foundation built with [composer](http://getcomposer.org) 
-upon [Yii Framework](http://yiiframework.com). 
-
-It's goal is the seamless integration of Yii extensions and libraries bundled in composer packages packages. 
-[Read on…](https://github.com/phundament/app/wiki/Phundament)
-
-If you're looking for the Yii 2 version of Phundament please visit our [`4.0.x-dev` branch](https://github.com/phundament/app/tree/4.0).
-
-Quick-Start
------------
-
-### Step 1
-   Option A) If you have [composer already installed](http://getcomposer.org/doc/00-intro.md#installation-nix)
-   
-```
-composer.phar create-project phundament/app:3.* app-v3
-```
-   
-   Option B) [Download](https://github.com/phundament/app/tags), extract, enter the app root folder
-      and start the installation process with
-```
-php composer.phar create-project
-```
-
-When asked, create local configuration files and choose your environment.
-
-### Step 2
-
-Apply the database migrations and enter your desired admin credentials.
-
-```
-cd app-v3
-app/yiic migrate
-```
-
-### Step 3
-
-Open `http://localhost/my-app/www/index.php` in your browser
-
-[Manage your application](https://github.com/phundament/app/wiki/Content-Management)
-
-*You may add the `--no-dev` option for production systems or use `--prefer-source` if you want to develop packages.*
-
-*Note: if you want to install Phundament 3 with a MySQL database, you have to update your config first, see the [Setup](https://github.com/phundament/app/wiki/Setup) section in our wiki.*
-
-Documentation
--------------
-
- * [The Definitive Guide to Phundament](https://github.com/phundament/app/wiki)
+[![Build Status](https://travis-ci.org/phundament/app.svg?branch=4.0)](https://travis-ci.org/phundament/app)
+[![Total Downloads](https://poser.pugx.org/phundament/app/downloads.png)](https://packagist.org/packages/phundament/app)
+[![Stories in Ready](https://badge.waffle.io/phundament/app.png?label=ready&title=Ready)](https://waffle.io/phundament/app)
 
 Demo
 ----
 
- * Try a test-drive at the [Demo Page](http://demo.phundament.com/3.0-dev)
-   * Login with `admin` / `admin`. **The demo website will be resetted every 6 hours.**
+Checkout the [Phundament Playground Application](https://github.com/phundament/playground/blob/master/README.md#phundament-developer-playground) Demo! 
 
+You can get the source-code of the demo application from its [GitHub repository](https://github.com/phundament/playground).
+
+Quick-Start
+-----------
+
+### Composer installation
+
+You can install _Phundament 4_ using [composer](https://getcomposer.org/download/)...
+
+    composer global require "fxp/composer-asset-plugin:1.0.0"
+    composer create-project --stability=beta phundament/app myapp
+
+Create and adjust your environment configuration, eg. add a database...
+
+    cd myapp
+    cp .env-dist .env
+    edit .env
+    
+Run the application setup...
+    
+    ./yii app/setup
+    
+Open `http://path-to-app/web` or `http://path-to-app/web?r=admin` in your browser.
+
+
+### Docker installation
+
+> Note: `docker-compose` was originally named fig and is available [here](https://github.com/docker/fig/releases).
+
+First pull the latest version of the container image
+
+    docker pull phundament/app
+
+Create your application folder    
+    
+    mkdir myapp
+    cd myapp
+    
+And copy the source code from the image    
+    
+    docker run -v `pwd`:/install phundament/app:4.0-development cp -r /app/. /install
+
+Now you can start your application by bringing up the `web` service
+
+    docker-compose up web
+    
+If you're running a [reverse proxy container](docs/51-docker-virtual-hosts.md) you can acces the application under [myapp.192.168.59.103.xip.io](http://myapp.192.168.59.103.xip.io).
+Or check the container port with `docker-compose ps`.
+
+
+> Note: Further installation methods with [Docker](https://github.com/phundament/app/blob/master/docs/51-docker.md), [fig (docker-compose)](https://github.com/phundament/app/blob/master/docs/51-fig.md), [Vagrant & Docker](https://github.com/phundament/app/blob/master/docs/51-vagrant-docker.md) or [PaaS](https://github.com/phundament/app/blob/master/docs/52-paas.md) are available in the documentation.
 
 Resources
 ---------
 
-[![Latest Stable Version](https://poser.pugx.org/phundament/app/v/stable.png)](https://packagist.org/packages/phundament/app)
-[![Total Downloads](https://poser.pugx.org/phundament/app/downloads.png)](https://packagist.org/packages/phundament/app)
-
-[![Latest Unstable Version](https://poser.pugx.org/phundament/app/v/unstable.png)](https://packagist.org/packages/phundament/app)
-[![Build Status](https://travis-ci.org/phundament/app.png?branch=develop)](https://travis-ci.org/phundament/app)
-
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/phundament/app/badges/quality-score.png?s=4d1ce01151a4e82df75b563e7ccf0001cc227bd1)](https://scrutinizer-ci.com/g/phundament/app/)
-[![Dependencies Status](https://depending.in/phundament/app.png)](http://depending.in/phundament/app)
-
-### Fundamentals
- *  [Documentation](https://github.com/phundament/app/wiki/)
- *  [API Class Reference](http://docs.phundament.com/3.0)
- *  [FAQ / Troubleshooting](https://github.com/phundament/app/wiki/FAQ)
- *  [Support](https://github.com/phundament/app/wiki/Support)
- *  [Report a bug](https://github.com/phundament/app/issues)
- *  Composer Repository [packages.phundament.com](http://packages.phundament.com)
-
-### Information
- *  [CHANGELOG](https://github.com/phundament/app/blob/master/CHANGELOG.md)
- *  [License](https://github.com/phundament/app/blob/master/LICENSE) BSD
-
-### Links
- *  [Phundament Website](http://phundament.com)
- *  [View at Yii Extensions](http://www.yiiframework.com/extension/phundament/)
- *  [View at packagist.org](https://packagist.org/packages/phundament/app)
- *  [Fork on github](https://github.com/phundament/app)
- *  [Downloads](https://github.com/phundament/app/tags)
- *  [Continuous Integration](https://travis-ci.org/phundament/app.png?branch=master)  
- *  [Company Website](http://herzogkommunikation.de)
- *  [Demo Website](http://demo.phundament.com/3.0-dev/)
-
-### Social Networks
- *  [Twitter](http://twitter.com/#!/phundament)
- *  [Facebook](http://www.facebook.com/phundament)
- *  [Google+](https://plus.google.com/114873431066202526630)
-
-### Contact
- *  phundament@usrbin.de
+- [Documentation](docs/README.md)
+- [Project Source-Code](https://github.com/phundament/app)
+- [Website](http://phundament.com)
+- [Team](https://github.com/orgs/phundament/teams)
+- [Imprint](http://herzogkommunikation.de/de/impressum-7.html)

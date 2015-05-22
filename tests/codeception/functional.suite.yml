@@ -5,10 +5,12 @@
 # (tip: better to use with frameworks).
 
 # RUN `build` COMMAND AFTER ADDING/REMOVING MODULES.
-
-class_name: TestGuy
+#basic/web/index.php
+class_name: FunctionalTester
 modules:
-    enabled: [PhpBrowser, TestHelper]
+    enabled:
+      - Filesystem
+      - Yii2
     config:
-      PhpBrowser:
-            url: 'http://localhost:31415/index-test.php'
+        Yii2:
+            configFile: 'tests/codeception/config/functional.php'
